@@ -124,3 +124,18 @@ section, article, .hero-copy, .project-copy, .contact-inner { min-width: 0; }
   .footer { grid-template-columns: 1fr; }
   .footer > *:nth-child(even) { text-align: left; }
 }
+
+
+/* Targeted phone fixes: prevent decorative symbols from covering real content. */
+@media (max-width: 600px) {
+  .services-section::before { content: none; display: none; }
+  .about-symbol { min-height: 0; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 22px; }
+  .about-symbol > span { font-size: 64px; line-height: 1; flex: 0 0 auto; font-variant-emoji: text; }
+  .about-symbol small { max-width: 150px; text-align: right; font-size: 8px; }
+  .about-symbol > b { position: static; font-size: 28px; flex: 0 0 auto; }
+  .services-section .section-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .services-section .section-head > div,
+  .services-section .section-head h2,
+  .services-section .section-head .muted { min-width: 0; max-width: 100%; }
+  .services-section .section-head h2 { overflow-wrap: normal; }
+}
